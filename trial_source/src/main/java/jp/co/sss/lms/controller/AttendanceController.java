@@ -24,7 +24,7 @@ import jp.co.sss.lms.util.Constants;
 @Controller
 @RequestMapping("/attendance")
 public class AttendanceController {
-
+	
 	@Autowired
 	private StudentAttendanceService studentAttendanceService;
 	@Autowired
@@ -41,12 +41,12 @@ public class AttendanceController {
 	 */
 	@RequestMapping(path = "/detail", method = RequestMethod.GET)
 	public String index(Model model) {
-
 		// 勤怠一覧の取得
 		List<AttendanceManagementDto> attendanceManagementDtoList = studentAttendanceService
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
-
+		boolean result = 
+		model.addAttribute("result", result);
 		return "attendance/detail";
 	}
 
