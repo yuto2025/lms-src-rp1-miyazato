@@ -45,7 +45,10 @@ public class AttendanceController {
 		List<AttendanceManagementDto> attendanceManagementDtoList = studentAttendanceService
 				.getAttendanceManagement(loginUserDto.getCourseId(), loginUserDto.getLmsUserId());
 		model.addAttribute("attendanceManagementDtoList", attendanceManagementDtoList);
-		boolean result = 
+		boolean result = studentAttendanceService.judge(loginUserDto.getLmsUserId());
+//		確認用
+		System.out.println(result);
+		
 		model.addAttribute("result", result);
 		return "attendance/detail";
 	}

@@ -87,6 +87,20 @@
 			return hours + ':' + minutes;
 		}
 	</script>
+	
+<!--未入力ダイアログ表示-->
+	
+	<script th:inline="javascript">
+		
+		var result = /*[[${result}]]*/ "";
+		
+		onload = function onLoad() {
+			if(result === true) {
+				alert('過去日の勤怠に未入力があります。');
+			}
+			
+		}
+	</script>
 
 </body>
 </html>

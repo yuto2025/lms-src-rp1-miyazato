@@ -333,14 +333,12 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
-	// 未登録勤怠の数を数える。
-	public Boolean judge(Integer lmsUserId,Date trainingDate) {
-//		short deleteFlg = 0; DB_FLG_FALSE = 0;
-		Integer count = tStudentAttendanceMapper.notEnterCount(lmsUserId,trainingDate,deleteFlg);
-		if (count > 0) {
-			return true;
-		}
-		return false;
+	// 未登録勤怠が存在するか判定。
+	public Boolean judge(Integer lmsUserId) {
+		Date trainingDate = attendanceUtil.getTrainingDate();
+		Integer count = tStudentAttendanceMapper.notEnterCount(lmsUserId,trainingDate,Constants.DB_FLG_FALSE);
+
+		return count > 0;
 		
 	}
 
