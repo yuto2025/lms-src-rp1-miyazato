@@ -333,13 +333,20 @@ public class StudentAttendanceService {
 		// 完了メッセージ
 		return messageUtil.getMessage(Constants.PROP_KEY_ATTENDANCE_UPDATE_NOTICE);
 	}
-	// 未登録勤怠が存在するか判定。
+
+	/**
+	 * 勤怠未登録が有・無判定処理
+	 * task25 宮里優杜
+	 * 
+	 * @param lmsUserId
+	 * @return boolean型でtureかfalseで返す
+	 */
 	public Boolean judge(Integer lmsUserId) {
 		Date trainingDate = attendanceUtil.getTrainingDate();
-		Integer count = tStudentAttendanceMapper.notEnterCount(lmsUserId,trainingDate,Constants.DB_FLG_FALSE);
+		Integer count = tStudentAttendanceMapper.notEnterCount(lmsUserId, Constants.DB_FLG_FALSE, trainingDate);
 
 		return count > 0;
-		
+
 	}
 
 }

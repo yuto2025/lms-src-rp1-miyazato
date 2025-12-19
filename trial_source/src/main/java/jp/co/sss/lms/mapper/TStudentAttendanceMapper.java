@@ -64,12 +64,13 @@ public interface TStudentAttendanceMapper {
 	 * @return 更新結果
 	 */
 	Boolean update(TStudentAttendance tStudentAttendance);
-	
+
+	//宮里優杜-task25
 	/**
-	 * 
-	 * @return
+	 * TStudentAttendanceマッパー
+	 * @author 宮里優杜-task25 
+	 * @param lmsUserId deleteFlg trainingDate
 	 */
-	//						動的に変化する。
-	Integer notEnterCount(Integer lmsUserId,Date trainingDate,Short deleteFlg);
+	Integer notEnterCount(Integer lmsUserId, Short deleteFlg, Date trainingDate);
 
 }
