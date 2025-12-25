@@ -146,5 +146,55 @@ public class AttendanceUtil {
 		}
 		return false;
 	}
-
+	
+//	//task26 宮里優杜
+//	public LinkedHashMap<Integer, String> setHourMap() {
+//		LinkedHashMap<Integer, String> hour = new LinkedHashMap<>();
+//		hour.put(null, "");
+//		
+//		for(int clock = 0; clock < 24;) {
+//			String hou;
+//			
+//			if(clock <= 9) {
+//				hou = "0" + clock;
+//			} else {
+//				hou = clock + "";
+//			}
+//			
+//			hour.put(clock,hou);
+//			
+//			clock = clock + 1;
+//		}
+//		return hour;
+//	}
+//	
+//	task26 宮里優杜
+//	public LinkedHashMap<Integer, String> setMinuteMap() {
+//		LinkedHashMap<Integer, String> minute = new LinkedHashMap<>();
+//		minute.put(null, "");
+//		
+//		for(int min = 0; min <= 59;) {
+//			String zero;
+//			
+//			if(min <= 9) {
+//				zero = "0" + min;
+//			} else {
+//				zero = min + "";
+//			}
+//			
+//			minute.put(min,zero);
+//			
+//			min = min + 1;
+//		}
+//		return minute;
+//	}
+	
+//	task26 宮里優杜 substringを使用し、時間の抜き出しを取得する。
+//	public Integer getHour(String trainingTime) {
+//		return Integer.parseInt(trainingTime.substring(0,2));
+//	}
+//	
+//	public Integer getMinute(String trainingEndTime) {
+//		return Integer.parseInt(trainingEndTime.substring(0,-2));
+//	}
 }

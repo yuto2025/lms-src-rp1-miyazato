@@ -32,4 +32,9 @@ public class AttendanceForm {
 	/** 日次の勤怠フォームリスト */
 	private List<DailyAttendanceForm> attendanceList;
 
+//  task26 宮里優杜
+//	private LinkedHashMap<Integer,String> hourMap;
+//	
+//	private LinkedHashMap<Integer,String> minuteMap;
+
 }
